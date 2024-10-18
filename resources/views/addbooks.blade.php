@@ -18,8 +18,8 @@
     </head>
     <body class="">  
         @include('layouts.navigation')
-        <div class="container mx-auto flex flex-col items-center justify-center min-h-screen">
-            @include('layouts.content') 
+        <div class="container mx-auto">
+            @include('layouts.addbooksform')
         </div>
         @include('layouts.footer')
     </body>

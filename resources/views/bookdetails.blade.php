@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Book Details</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -19,7 +19,7 @@
     <body class="">  
         @include('layouts.navigation')
         <div class="container mx-auto flex flex-col items-center justify-center min-h-screen">
-            @include('layouts.content') 
+            @include('layouts.bookdetails') 
         </div>
         @include('layouts.footer')
     </body>
