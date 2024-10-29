@@ -36,7 +36,7 @@
         <tbody>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
 
-                @foreach ($books as $book)
+                {{-- @foreach ($books as $book)
                     <td>{{ $book->book_title }}</td>
                     <td>{{ $book->book_author }}</td>
                     <td>{{ $book->publication_year }}</td>
@@ -44,7 +44,7 @@
                     <td class="px-6 py-4">
                         <a href="{{ route('bookdetails.id', $book->id) }}"><button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Details</button></a>
                     </td>
-                @endforeach
+                @endforeach --}}
 
             </tr>
             {{-- <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
