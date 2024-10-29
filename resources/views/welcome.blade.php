@@ -13,14 +13,14 @@
         <!-- Styles -->
         <script src="https://cdn.tailwindcss.com"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        {{-- @vite('resources/js/app.js') --}}
+        @vite('resources/js/app.js')
 
     </head>
     <body class="">  
         @include('layouts.navigation')
-        <div class="container mx-auto flex flex-col items-center justify-center min-h-screen">
-            @include('layouts.content') 
-        </div>
+            <div class="container mx-auto flex flex-col items-center justify-center min-h-screen">
+                @include('layouts.content') 
+            </div>
         @include('layouts.footer')
     </body>
 </html>

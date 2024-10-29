@@ -16,15 +16,15 @@
                     {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link> --}}
-                    <x-nav-link>
-                        Home
+                    <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
+                        {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link>
-                        Books Collection
+                    {{-- <x-nav-link>
+                        <a href="">Books Collection</a> 
                     </x-nav-link>
                     <x-nav-link>
                         All books
-                    </x-nav-link>
+                    </x-nav-link> --}}
                    
                 </div>
             </div>
