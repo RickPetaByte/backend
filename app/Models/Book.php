@@ -18,6 +18,6 @@ class Book extends Model
     ];
 
     protected $casts = [
-        'genres' => 'string'
+        'genres' => 'array'
     ];
 }

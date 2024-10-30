@@ -31,7 +31,10 @@ Route::get('/addbooks', [BookController::class, 'create'])->name('addbooks');
 
 Route::post('/addbooks/submit', [BookController::class, 'store'])->name('books.store');
 
-Route::get('/books/{id}', [BookController::class, 'get_id'])->name('bookdetails');
+Route::get('/bookdetails/{id}', [BookController::class, 'show'])->name('bookdetails');
+Route::get('/bookedit/{id}', [BookController::class, 'edit'])->name('bookedit');
+Route::post('/bookedit/{id}', [BookController::class, 'update'])->name('bookedit');
+Route::get('/bookdelete/{id}', [BookController::class, 'destroy'])->name('bookdelete');
 
 //Route::post('/addbooks/submit', [BookController::class, 'store'])->name('addbooks/submit');
 

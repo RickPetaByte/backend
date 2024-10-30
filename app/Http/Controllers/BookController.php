@@ -37,47 +37,65 @@ class BookController extends Controller
             'book_author' => 'required|string|max:255',
             'publication_year' => 'required|integer|min:1900|max:2100',
             'genres' => 'nullable|array',
-            // Add validation for other fields as needed
         ]);
 
-        Book::create($request->all());
+        $bookData = $request->all();
+        $bookData['genres'] = json_encode($request->input('genres'));
+    
+        Book::create($bookData);
+    
         return redirect()->route('welcome')->with('success', 'Book created successfully');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        return view('bookdetails', compact('book')); //books.show
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        return view('bookedit', compact('book'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        // Validate and edit a book
+        $request->validate([
+            'book_title' => 'required|string|max:255',
+            'book_author' => 'required|string|max:255',
+            'publication_year' => 'required|integer|min:1900|max:2100',
+            'genres' => 'nullable|array',
+        ]);
+
+        $book = Book::findOrFail($id);
+
+        $bookData = $request->all();
+        $bookData['genres'] = json_encode($request->input('genres'));
+    
+        $book->update($bookData);
+    
+        return redirect()->route('welcome')->with('success', 'Book created successfully');
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
-    }
-
-    public function get_id($id) {
         $book = Book::findOrFail($id);
-        return view('bookdetails', compact('book')); //books.show
+        $book->delete();
+        return view('welcome');
     }
 }

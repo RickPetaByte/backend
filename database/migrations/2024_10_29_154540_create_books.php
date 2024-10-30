@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('book_title');
             $table->string('book_author');
             $table->integer('publication_year');
-            $table->json('genres');
+            $table->json('genres'); //wordt opgeslagen als json
             $table->timestamps();
         });
     }
