@@ -1,10 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 
 
@@ -12,18 +9,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-// // Route::get('/', function () {
-// //     return view('welcome');
-// // })->middleware(['auth
-
-// Route::get('/addbooks', function(){
-//     return view('addbooks');
-// });
-
-// Route::get('/addbooks', [BookController::class, 'index'])->name('addbooks');
-// Route::get('/addbooks', function () {
-//     return view('addbooks');
-// });
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 
 Route::get('/', [BookController::class, 'index'])->name('welcome');
 
@@ -34,23 +22,7 @@ Route::post('/addbooks/submit', [BookController::class, 'store'])->name('books.s
 Route::get('/bookdetails/{id}', [BookController::class, 'show'])->name('bookdetails');
 Route::get('/bookedit/{id}', [BookController::class, 'edit'])->name('bookedit');
 Route::post('/bookedit/{id}', [BookController::class, 'update'])->name('bookedit');
-Route::get('/bookdelete/{id}', [BookController::class, 'destroy'])->name('bookdelete');
-
-//Route::post('/addbooks/submit', [BookController::class, 'store'])->name('addbooks/submit');
-
-// Route::get('/', [BookController::class, 'index'])->name('books');
-// Route::get('/', [BookController::class, 'store'])->name('welcome');
-
-// // Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-// // Route::post('login', [LoginController::class, 'login']);
-// // Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-
-
-// Route::get('/bookdetails', function () {
-//     return view('bookdetails');
-// })->name('bookdetails');
-
-
+Route::delete('/bookdelete/{id}', [BookController::class, 'destroy'])->name('bookdelete');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

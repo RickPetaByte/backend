@@ -21,6 +21,7 @@ class BookFactory extends Factory
             "book_author" => "Rick",
             "publication_year" => "2001",
             "genres" => "Thriller",
+            "book_image" => "/storage/images/1730382873_putin.jpg",
         ];
     }
 }

@@ -17,6 +17,7 @@
             <p><strong>Auteur:</strong> {{ $book->book_author }}</p>
             <p><strong>Publicatiejaar:</strong> {{ $book->publication_year }}</p>
             <p><strong>Genre:</strong> {{ json_encode($book->genres) }}</p>
+            <p><strong>Book Image:</strong><img src="{{ asset($book->book_image) }}" alt="Book Image" width="100" height="100"></p>
             <hr>
         </div>
         <div class="card-footer text-center">
